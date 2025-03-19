@@ -32,4 +32,83 @@
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ddd;
-          
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .login-button:hover {
+            background-color: #007bb5;
+        }
+        .or-divider {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 14px;
+            color: #999;
+        }
+        .or-divider span {
+            background-color: #fafafa;
+            padding: 0 10px;
+        }
+        .footer-links {
+            text-align: center;
+            font-size: 14px;
+        }
+        .footer-links a {
+            color: #0095f6;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Instagram</h1>
+        
+        <form id="login-form" onsubmit="return false;"> <!-- Formu submit olmaması için onsubmit="return false;" ekledim -->
+            <input type="text" id="username" placeholder="Kullanıcı Adı" required>
+            <input type="password" id="password" placeholder="Şifre" required>
+            <button type="button" class="login-button" onclick="login()">Giriş Yap</button>
+        </form>
+
+        <div class="or-divider">
+            <span>veya</span>
+        </div>
+
+        <div class="footer-links">
+            <p><a href="#">Hesap oluştur</a> | <a href="#">Şifremi unuttum?</a></p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript'te login fonksiyonunu düzelttim
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            // Basit doğrulama kontrolü
+            if (username === "" || password === "") {
+                alert("Kullanıcı adı veya şifre boş olamaz!");
+            } else {
+                alert("Giriş başarılı!");
+                // Burada başka işlemler yapılabilir, örneğin anasayfaya yönlendirme
+                // window.location.href = "anasayfa.html"; // Bu satırı istediğiniz yönlendirmeyi yapmak için kullanabilirsiniz
+            }
+        }
+    </script>
+
+</body>
+</html>
